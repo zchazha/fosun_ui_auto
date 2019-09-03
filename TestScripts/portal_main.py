@@ -64,20 +64,20 @@ def excete_portal_action():
 def core_action():
     url = "http://" + ip + ":18082/authority-app/scube_ui/login_module/html/login.html"
     driver.get(url)
-    driver.maximize_window()
+    # driver.maximize_window()
     CoreLogin.core_login(driver)
     time.sleep(3)
     CorePreApprove.core_pre_approve(driver)
     info("预审成功！")
     CoreJuniorApprove.core_junior_approve(driver)
     info("初审成功！")
-    CoreFinalApprove.core_final_approve(driver)
-    info("终审审成功！")
+    # CoreFinalApprove.core_final_approve(driver)
+    # info("终审审成功！")
 
 def login():
     url = "http://" + ip + ":38080/credit-portal/login.html"
     driver.get(url)
-    driver.maximize_window()
+    # driver.maximize_window()
     time.sleep(20)
     Login.login(driver,mobile,card)
     info("提现成功！")
@@ -85,12 +85,22 @@ def quit():
     driver.quit()
 
 if __name__ == "__main__":
-    # for i in range(10):
+    # for i in range(4):
     #     excete_portal_action()
+    #     core_action()
+    #     login()
     # quit()
-    excete_portal_action()
-    core_action()
-    login()
+
+    for i in range(4):
+        excete_portal_action()
+        core_action()
     quit()
+
+
+
+    # excete_portal_action()
+    # core_action()
+    # login()
+    # quit()
 
 
