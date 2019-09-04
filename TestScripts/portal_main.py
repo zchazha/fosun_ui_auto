@@ -1,6 +1,7 @@
 from selenium import webdriver
 
 from Action.core_login import CoreLogin
+from Action.core_make_loan import CoreMakeLoan
 from Action.core_pre_approve import CorePreApprove
 from Action.core_junior_approve import CoreJuniorApprove
 from Action.core_final_approve import CoreFinalApprove
@@ -71,16 +72,22 @@ def core_action():
     info("预审成功！")
     CoreJuniorApprove.core_junior_approve(driver)
     info("初审成功！")
-    # CoreFinalApprove.core_final_approve(driver)
-    # info("终审审成功！")
+    CoreFinalApprove.core_final_approve(driver)
+    info("终审审成功！")
 
 def login():
     url = "http://" + ip + ":38080/credit-portal/login.html"
     driver.get(url)
     # driver.maximize_window()
-    time.sleep(20)
+    time.sleep(5)
     Login.login(driver,mobile,card)
     info("提现成功！")
+
+def make_loan():
+    url = "http://" + ip + ":18082/authority-app/scube_ui/login_module/html/login.html"
+    driver.get(url)
+    CoreMakeLoan.core_make_loan(driver)
+    info("放款成功")
 def quit():
     driver.quit()
 
@@ -91,16 +98,15 @@ if __name__ == "__main__":
     #     login()
     # quit()
 
-    for i in range(4):
-        excete_portal_action()
-        core_action()
-    quit()
-
-
-
-    # excete_portal_action()
-    # core_action()
-    # login()
+    # for i in range(4):
+    #     excete_portal_action()
+    #     core_action()
     # quit()
+
+    excete_portal_action()
+    core_action()
+    login()
+    make_loan()
+    quit()
 
 
