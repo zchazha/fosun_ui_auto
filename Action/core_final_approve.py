@@ -10,7 +10,7 @@ class CoreFinalApprove():
             page.get_page_obj("task_receive").click()
             time.sleep(2)
             page.get_page_obj("new_tast_button").click()
-            time.sleep(2)
+            time.sleep(4)
             page.get_page_obj("receive_task_button").click()
             time.sleep(3)
             page.get_page_obj("confirm_button").click()

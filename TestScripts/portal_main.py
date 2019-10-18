@@ -4,7 +4,7 @@ from Action.core_login import CoreLogin
 from Action.core_make_loan import CoreMakeLoan
 from Action.core_pre_approve import CorePreApprove
 from Action.core_junior_approve import CoreJuniorApprove
-from Action.core_final_approve import CoreFinalApprove
+from Action.core_final_approve_2 import CoreFinalApprove
 from Action.credit_account_action import CreditAccount
 from Action.login_action import Login
 from Action.init_mysql_action import init_mysql
@@ -47,7 +47,7 @@ def excete_portal_action():
     #申请人信息
     name = DataProvide.name()
     id = DataProvide.id()
-    MyLoan.myloan(driver,name,id)
+    MyLoan.myloan(driver,name,id,loan_amount="20")
     info("姓名："+name)
     info("身份证号："+ id)
     info("申请人页面申请成功")
@@ -59,7 +59,7 @@ def excete_portal_action():
     #征信账户
     CreditAccount.credit_account(driver)
     time.sleep(5)
-    assert u"恭喜,申请提交成功!" in driver.page_source
+    # assert u"恭喜,申请提交成功!" in driver.page_source
     info("portal端成功！")
 
 def core_action():
@@ -73,7 +73,7 @@ def core_action():
     CoreJuniorApprove.core_junior_approve(driver)
     info("初审成功！")
     CoreFinalApprove.core_final_approve(driver)
-    info("终审审成功！")
+    info("终审成功！")
 
 def login():
     url = "http://" + ip + ":38080/credit-portal/login.html"
@@ -92,10 +92,11 @@ def quit():
     driver.quit()
 
 if __name__ == "__main__":
-    # for i in range(4):
+    # for i in range(2):
     #     excete_portal_action()
     #     core_action()
     #     login()
+    #     make_loan()
     # quit()
 
     # for i in range(4):
@@ -107,6 +108,9 @@ if __name__ == "__main__":
     core_action()
     login()
     make_loan()
-    quit()
+    # time.sleep(4)
+    # excete_portal_action()
+    # core_action()
+    # quit()
 
 

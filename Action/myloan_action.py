@@ -33,7 +33,7 @@ class MyLoan():
             myloan.get_page_obj("upload_file1").send_keys(upload_file_path+"\\test_pic1.png")
             myloan.get_page_obj("upload_file2").send_keys(upload_file_path+"\\test_pic2.png")
             myloan.get_page_obj("upload_file3").send_keys(upload_file_path+"\\test_pic1.png")
-            time.sleep(2)
+            time.sleep(4)
             myloan.get_page_obj("next_step").click()
             id_flag = 1
             while id_flag:

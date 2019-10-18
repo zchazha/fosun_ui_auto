@@ -77,9 +77,9 @@ class DataProvide():
                 '预', '奶', '雄', '升', '碃', '编', '典', '袋', '莱', '含', '盛', '济', '蒙', '棋', '端', '腿', '招', '释', '介', '烧', '误',
                 '乾', '坤']
 
-        x = random.randint(0, len(first_name))
-        m1 = random.randint(0, len(second_name))
-        m2 = random.randint(0, len(second_name))
+        x = random.randint(0, len(first_name)-1)
+        m1 = random.randint(0, len(second_name)-1)
+        m2 = random.randint(0, len(second_name)-1)
         if random.randint(0,1) == 0:
             name = ('' + first_name[x] + second_name[m1] + second_name[m2])
         else:
