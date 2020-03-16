@@ -4,7 +4,7 @@ from Action.core_login import CoreLogin
 from Action.core_make_loan import CoreMakeLoan
 from Action.core_pre_approve import CorePreApprove
 from Action.core_junior_approve import CoreJuniorApprove
-from Action.core_final_approve_2 import CoreFinalApprove
+from Action.core_final_approve import CoreFinalApprove
 from Action.credit_account_action import CreditAccount
 from Action.login_action import Login
 from Action.init_mysql_action import init_mysql
@@ -92,25 +92,13 @@ def quit():
     driver.quit()
 
 if __name__ == "__main__":
-    # for i in range(2):
-    #     excete_portal_action()
-    #     core_action()
-    #     login()
-    #     make_loan()
-    # quit()
 
-    # for i in range(4):
-    #     excete_portal_action()
-    #     core_action()
-    # quit()
 
     excete_portal_action()
     core_action()
     login()
     make_loan()
-    # time.sleep(4)
-    # excete_portal_action()
-    # core_action()
-    # quit()
+    time.sleep(4)
+    quit()
 
 

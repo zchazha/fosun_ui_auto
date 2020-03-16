@@ -21,7 +21,7 @@ class CorePreApprove():
             page.get_page_obj("thrid_info_button").click()
             page.get_page_obj("receive_report_button").click()
             page.get_page_obj("click_simple_report_button").click()
-            page.get_page_obj("choice_file").send_keys(upload_file_path+"\\李文龙.pdf")
+            page.get_page_obj("choice_file").send_keys(upload_file_path+"\\刘荣真.pdf")
             page.get_page_obj("receive_file_button").click()
             page.get_page_obj("confirm_button1").click()
             time.sleep(2)

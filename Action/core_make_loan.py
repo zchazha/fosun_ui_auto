@@ -6,8 +6,8 @@ class CoreMakeLoan():
     def core_make_loan(driver):
         try:
             page = page_object.Page(driver,"core_make_loan")
-            page.get_page_obj("username").send_keys("88888888")
-            page.get_page_obj("password").send_keys("88888888")
+            page.get_page_obj("username").send_keys("zhouxx")
+            page.get_page_obj("password").send_keys("QQQwww111222")
             page.get_page_obj("login_button").click()
             time.sleep(3)
             page.get_page_obj("loan_manage").click()

@@ -3,7 +3,7 @@ import time
 
 class CoreFinalApprove():
     @staticmethod
-    def core_final_approve(driver):
+    def core_final_approve(driver,loan_term = "loan_plan_12"):
         try:
             page = Page(driver,"core_final_approve")
             time.sleep(2)
@@ -17,9 +17,10 @@ class CoreFinalApprove():
             time.sleep(2)
             page.get_page_obj("aprrove_confirm_info_button").click()
             time.sleep(2)
-            page.get_page_obj("final_level").click()
-            time.sleep(2)
-            page.get_page_obj("loan_plan").click()
+            # 选择S
+            # page.get_page_obj("final_level").click()
+            # time.sleep(2)
+            page.get_page_obj(loan_term).click()
             time.sleep(2)
             page.get_page_obj("save").click()
             time.sleep(3)
